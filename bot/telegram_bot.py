@@ -1,7 +1,7 @@
 from telegram.ext import Application, CommandHandler
-from .config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, IMAP_SERVER, EMAIL_ADDRESS, EMAIL_PASSWORD
-from .imap_handler import fetch_emails
-from .smtp_handler import send_email
+from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, IMAP_SERVER, EMAIL_ADDRESS, EMAIL_PASSWORD
+from imap_handler import fetch_emails
+from smtp_handler import send_email
 
 async def start(update, context):
     """Handler for the /start command."""
