@@ -13,9 +13,11 @@ def fetch_and_send(update, context):
         update.message.reply_text("Нет новых писем.")
     else:
         for email in emails:
-            context.bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=f"Тема: {email['subject']}
+         context.bot.send_message(
+         chat_id=TELEGRAM_CHAT_ID,
+         text=f"Тема: {email['subject']}\n\n{email['body']}"
+)
 
-{email['body']}")
 
 def send_mail(update, context):
     args = context.args
