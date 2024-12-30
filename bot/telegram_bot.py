@@ -1,7 +1,6 @@
 from telegram.ext import Application, CommandHandler
 from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, IMAP_SERVER, EMAIL_ADDRESS, EMAIL_PASSWORD
 from imap_handler import fetch_emails
-from smtp_handler import send_email
 import logging
 
 # Configure logging
@@ -34,15 +33,8 @@ async def fetch_and_send(update, context):
             except Exception as e:
                 logging.error(f"Failed to send email to Telegram: {e}")
 
-async def send_mail(update, context):
-    """Handler to send an email."""
-    # Logic for sending emails can be implemented here
-    pass
-
-# Application setup (example)
+# Example of how the application can be set up
 # application = Application.builder().token(TELEGRAM_TOKEN).build()
 # application.add_handler(CommandHandler("start", start))
 # application.add_handler(CommandHandler("fetch", fetch_and_send))
 # application.run_polling()
-
-
